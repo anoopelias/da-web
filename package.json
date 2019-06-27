@@ -1,0 +1,23 @@
+{
+  "name": "mazeio-2019",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anoopelias/mazeio-2019.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anoopelias/mazeio-2019/issues"
+  },
+  "homepage": "https://github.com/anoopelias/mazeio-2019#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase": "^6.2.3"
+  }
+}
