@@ -5,7 +5,7 @@
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (xmlhttp.readyState === XMLHttpRequest.DONE) {
-        console.log("Request complete");
+        console.log("Request complete", xmlhttp.response);
       }
     }
     xmlhttp.open("GET", "http://abc.com:3000/send");
