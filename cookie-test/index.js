@@ -1,24 +1,29 @@
 (function() {
   const sendButton = document.getElementById("send");
-  let count = 0;
+  let count = getCookie("clientCount") || 0;
 
   sendButton.addEventListener("click", function() {
-    setCookie("clientCount", count++);
-    printCookie();
-    console.log("Sending request");
+    printCookie("Before");
+    setCookie("clientCount", ++count);
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-      console.log("Got response");
       if (xmlhttp.readyState === XMLHttpRequest.DONE) {
-        setTimeout(printCookie, 0);
+        printCookie("After");
       }
     }
     xmlhttp.open("GET", "send");
     xmlhttp.send();
   });
 
-  function printCookie() {
-    console.log("Client cookie", document.cookie);
+  function printCookie(context) {
+    console.log(context, "clientCount", getCookie("clientCount"));
+    console.log(context, "serverCount", getCookie("serverCount"));
+  }
+
+  function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
   }
 
   function setCookie(name, value) {
