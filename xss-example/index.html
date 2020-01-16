@@ -4,10 +4,18 @@
   </head>
   <body>
     <label for="name">Name:</label>
-    <input type="textbox" name="name" id="name"/>
+    <input type="textbox" name="name" id="name" style="width:310px"/>
     <br>
 
     <p>Hello.. <span id="displayName"></span>!</p>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p> For xss injection Try text &lt;img src="" onerror="javascript:alert('Umbridge')"/&gt; </p>
     <script src="index.js"></script>
   </body>
 </html>
